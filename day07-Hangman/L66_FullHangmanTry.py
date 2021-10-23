@@ -28,7 +28,9 @@ def choose_difficulty():
         word_list = medium_words
     else:
         word_list = difficult_words
-    selected_word = word_list[random.randint(0, len(word_list) - 1)]
+    selected_word = random.choice(word_list)
+    # selected_word = word_list[random.randint(0, len(word_list) - 1)]
+
     return selected_word
 
 

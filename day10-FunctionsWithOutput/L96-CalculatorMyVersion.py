@@ -1,13 +1,17 @@
 def add(a, b):
+    """Add to values and return the result."""
     return a + b
 
 def subtract(a, b):
+    """Subtract two values and return the result."""
     return  a-b
 
 def multiply(a, b):
+    """Multiply two values and return the result."""
     return a * b
 
 def divide(a, b):
+    """Divide two values and return the result."""
     return a / b
 
 continue_calculating = True

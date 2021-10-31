@@ -30,6 +30,8 @@ resources = {
     "coffee": 100,
 }
 
+profit = 0
+
 money = {
     "quarters": 0,
     "dimes": 0,
@@ -41,6 +43,7 @@ money = {
 def print_report():
     for key in resources:
         print(f"{key.title()}: {resources[key]}")
+    print(f"Profit: {profit}")
 
 
 def check_resources(key):
@@ -60,10 +63,9 @@ def cost(drink):
 
 
 def sum_money(money):
-    sum = 0
     for key in money:
         if key == "quarters":
-            sum += money[key] * 0.25
+            sum = money[key] * 0.25
         elif key == "dimes":
             sum += money[key] * 0.1
         elif key == "nickles":
@@ -71,7 +73,7 @@ def sum_money(money):
         else:
             sum += money[key] * 0.01
 
-    return round(sum,2)
+    return round(sum, 2)
 
 
 def make_drink(drink):

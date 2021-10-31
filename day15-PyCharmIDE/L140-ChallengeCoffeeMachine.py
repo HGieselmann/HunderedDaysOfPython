@@ -20,8 +20,10 @@ while machine_running:
         print(f"You entered: {user_money_sum}.")
         if user_money_sum == CMR.MENU[user_drink]['cost']:
             CMR.make_drink(user_drink)
+            CMR.profit += CMR.MENU[user_drink]['cost']
         elif user_money_sum >= CMR.MENU[user_drink]['cost']:
             CMR.make_drink(user_drink)
+            CMR.profit += CMR.MENU[user_drink]['cost']
             print(f"Here is your change: {CMR.give_change(user_money_sum, user_drink)}.")
         else:
             print(f"Not enough money. Here is your money back. Returning: {user_money_sum}")

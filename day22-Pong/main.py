@@ -1,6 +1,7 @@
 import time
 from turtle import Screen
 from score import Score
+from centerline import Centerline
 
 from ball import Ball
 from paddle import Paddle
@@ -10,6 +11,7 @@ player_2 = Paddle(-1)
 paddles = [player_1, player_2]
 ball = Ball()
 scoreboard = Score()
+centerline = Centerline()
 
 screen = Screen()
 screen.setup(width=640, height=480)

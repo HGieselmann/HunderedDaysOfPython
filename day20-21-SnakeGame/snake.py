@@ -56,3 +56,24 @@ class Snake:
     def move_snake_body(self):
         for i in range(1, len(self.body)):
             self.body[i].setpos(self.positions[i - 1])
+
+    def add_segment(self):
+        new_segment = Turtle('turtle')
+        new_segment.color("white")
+        new_segment.shape("turtle")
+        new_segment.turtlesize(self.stepsize / 25)
+        new_segment.pu()
+        self.body.append(new_segment)
+
+    def hit_walls(self):
+        head_position = self.body[0].position()
+        if head_position[0] > 300 or head_position[0] < -300 or head_position[1] > 300 or head_position[1] < -300:
+            return True
+
+    def hit_self(self):
+        head_position = self.body[0].position()
+        for i in range(1, len(self.body)):
+            if self.body[i].distance(head_position) < 1:
+                return True
+
+

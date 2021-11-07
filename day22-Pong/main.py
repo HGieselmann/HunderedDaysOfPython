@@ -6,6 +6,7 @@ from paddle import Paddle
 
 player_1 = Paddle(1)
 player_2 = Paddle(-1)
+ball = Ball()
 
 screen = Screen()
 screen.setup(width=640, height=480)
@@ -24,6 +25,13 @@ while game_running:
     screen.update()
     player_1.move()
     player_2.move()
+    ball.move()
+    bounds = ball.check_horizontal_bounds()
+    if bounds == 1:
+        print("score player 1")
+    elif bounds == 2:
+        print("score player 2")
+
 
 
 screen.exitonclick()

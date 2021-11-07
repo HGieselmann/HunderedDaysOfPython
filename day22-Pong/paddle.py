@@ -8,6 +8,8 @@ class Paddle(Turtle):
         self.segments = []
         self.create_segments()
 
+        self.__SPEED = 15
+
 
     def create_segments(self):
         for i in range(0, self.length):
@@ -21,9 +23,14 @@ class Paddle(Turtle):
             self.segments.append(segment)
 
     def move(self):
-        if self.segments[len(self.segments)-1].ycor() < 240 or self.segments[len(self.segments)-1].ycor() > -240:
+        heading = self.segments[0].heading()
+        if self.segments[2].ycor() > 230 and heading == 90:
+            pass
+        elif self.segments[0].ycor() < -230 and heading == 270:
+            pass
+        else:
             for seg in self.segments:
-                seg.forward(10)
+                seg.forward(self.__SPEED)
 
     def set_north(self):
         for seg in self.segments:

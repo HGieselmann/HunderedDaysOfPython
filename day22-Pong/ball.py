@@ -28,3 +28,12 @@ class Ball(Turtle):
             return 2
         else:
             return 0
+
+    def bounce_paddles(self, paddles):
+        for paddle in paddles:
+            for segment in paddle.segments:
+                if segment.distance(self.position()) < 20:
+                    if self.xcor() > 0:
+                        self.direction[0] = -10
+                    else:
+                        self.direction[0] = 10

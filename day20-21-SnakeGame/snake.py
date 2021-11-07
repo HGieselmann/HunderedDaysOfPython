@@ -72,8 +72,8 @@ class Snake:
 
     def hit_self(self):
         head_position = self.body[0].position()
-        for i in range(1, len(self.body)):
-            if self.body[i].distance(head_position) < 1:
+        for segment in self.body[1:]:
+            if segment.distance(head_position) < 1:
                 return True
 
 

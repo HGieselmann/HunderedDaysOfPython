@@ -10,7 +10,6 @@ def resetGame():
     return player
 
 
-
 screen = Screen()
 screen.setup(width=1280, height=720)
 screen.tracer(0)

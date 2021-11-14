@@ -25,8 +25,4 @@ input = Entry()
 input.pack()
 
 
-
-
-
-
 window.mainloop()
